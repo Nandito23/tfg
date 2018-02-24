@@ -39,13 +39,15 @@ public class ReservasVO {
 	@Column(name="cuota_total")
 	private int cuotaTotal;
 	
-
-	@OneToMany(mappedBy="reserva")
-	private List<CochesVO> ListaCoches;
-	
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
 	private UsuarioVO usuarioVO;
+	
+	
+	@OneToMany(mappedBy="reserva")
+	private List<CochesVO> ListaCoches;
+	
+	
 
 	
 	public int getIdReserva() {
