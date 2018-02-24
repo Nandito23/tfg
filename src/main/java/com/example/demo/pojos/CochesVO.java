@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -50,8 +52,14 @@ private int numKms;
 @Column(name="potencia")
 private int cv;
 
-@OneToMany(mappedBy="coches")
-private List<GarajeVO> ListaGaraje;
+
+@ManyToOne
+@JoinColumn(name="id_garaje")
+private GarajeVO garajeVO;
+
+@ManyToOne
+@JoinColumn(name="id_reserva")
+private ReservasVO reservasVO;
 
 public int getIdCoches() {
 	return idCoches;
@@ -141,13 +149,26 @@ public void setCv(int cv) {
 	this.cv = cv;
 }
 
-public List<GarajeVO> getListaGaraje() {
-	return ListaGaraje;
+public GarajeVO getGarajeVO() {
+	return garajeVO;
 }
 
-public void setListaGaraje(List<GarajeVO> listaGaraje) {
-	ListaGaraje = listaGaraje;
+public void setGarajeVO(GarajeVO garajeVO) {
+	this.garajeVO = garajeVO;
 }
+
+public ReservasVO getReservasVO() {
+	return reservasVO;
+}
+
+public void setReservasVO(ReservasVO reservasVO) {
+	this.reservasVO = reservasVO;
+}
+
+
+
+
+
 
 
 	

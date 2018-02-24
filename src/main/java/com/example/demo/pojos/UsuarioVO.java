@@ -41,7 +41,7 @@ public class UsuarioVO {
 	@Column(name="pass")
 	private String pass;
 
-	@OneToMany(mappedBy="usuario")
+	@OneToMany(mappedBy="usuarioVO")
 	private List<ReservasVO> ListaReserva;
 
 	public int getIdUsuario() {
@@ -116,6 +116,7 @@ public class UsuarioVO {
 		ListaReserva = listaReserva;
 	}
 
+	
 	
 	
 	

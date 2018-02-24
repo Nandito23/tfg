@@ -1,10 +1,13 @@
 package com.example.demo.pojos;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,8 @@ public class GarajeVO {
 	@Column(name="ubicacion")
 	private String ubicacion;
 	
+	@OneToMany(mappedBy="garajeVO")
+	private List<CochesVO> ListaCoches;
 
 	public int getIdGaraje() {
 		return idGaraje;
@@ -37,9 +42,15 @@ public class GarajeVO {
 		this.ubicacion = ubicacion;
 	}
 
-	
-	
-	
+	public List<CochesVO> getListaCoches() {
+		return ListaCoches;
+	}
+
+	public void setListaCoches(List<CochesVO> listaCoches) {
+		ListaCoches = listaCoches;
+	}
+
+
 	
 
 }

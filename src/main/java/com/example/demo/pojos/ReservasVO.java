@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
@@ -37,80 +40,78 @@ public class ReservasVO {
 	private int cuotaTotal;
 	
 
-	@OneToOne(mappedBy="reserva")
+	@OneToMany(mappedBy="reserva")
 	private List<CochesVO> ListaCoches;
+	
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
+	private UsuarioVO usuarioVO;
 
-
+	
 	public int getIdReserva() {
 		return idReserva;
 	}
-
 
 	public void setIdReserva(int idReserva) {
 		this.idReserva = idReserva;
 	}
 
-
 	public String getLugarRecogida() {
 		return lugarRecogida;
 	}
-
 
 	public void setLugarRecogida(String lugarRecogida) {
 		this.lugarRecogida = lugarRecogida;
 	}
 
-
 	public Date getFechaRecogida() {
 		return fechaRecogida;
 	}
-
 
 	public void setFechaRecogida(Date fechaRecogida) {
 		this.fechaRecogida = fechaRecogida;
 	}
 
-
 	public Date getFechaDevolucion() {
 		return fechaDevolucion;
 	}
-
 
 	public void setFechaDevolucion(Date fechaDevolucion) {
 		this.fechaDevolucion = fechaDevolucion;
 	}
 
-
 	public String getLugarDevolucion() {
 		return lugarDevolucion;
 	}
-
 
 	public void setLugarDevolucion(String lugarDevolucion) {
 		this.lugarDevolucion = lugarDevolucion;
 	}
 
-
 	public int getCuotaTotal() {
 		return cuotaTotal;
 	}
-
 
 	public void setCuotaTotal(int cuotaTotal) {
 		this.cuotaTotal = cuotaTotal;
 	}
 
-
 	public List<CochesVO> getListaCoches() {
 		return ListaCoches;
 	}
 
-
 	public void setListaCoches(List<CochesVO> listaCoches) {
 		ListaCoches = listaCoches;
 	}
-	
-	
+
+	public UsuarioVO getUsuarioVO() {
+		return usuarioVO;
+	}
+
+	public void setUsuarioVO(UsuarioVO usuarioVO) {
+		this.usuarioVO = usuarioVO;
+	}
+
 	
 	
 }
