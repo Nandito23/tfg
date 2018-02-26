@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="reserva")
@@ -44,7 +43,7 @@ public class ReservasVO {
 	private UsuarioVO usuarioVO;
 	
 	
-	@OneToMany(mappedBy="reserva")
+	@OneToMany(mappedBy="reservasVO")
 	private List<CochesVO> ListaCoches;
 	
 	
