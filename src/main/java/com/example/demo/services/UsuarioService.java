@@ -34,5 +34,7 @@ public class UsuarioService {
 	public void update(Integer idUsuario,UsuarioVO usuario) {
 		usuarioRepo.save(usuario);
 	}
+
+
 	
 }

@@ -9,7 +9,15 @@ public class controllerIndex { //CONTROLADOR DE LA VISTA PRINCIPAL
 
 	//LANZA LA VISTA PRINCIPAL
 	@RequestMapping("/vistaIndex")
-	public ModelAndView vistaLogin() {
+	public ModelAndView vistaPrincipal() {
 		return new ModelAndView("index");
 	}
+	
+	@RequestMapping("/vistaLogin")
+	public ModelAndView vistaLogueo() {
+		return new ModelAndView("vistaLogin");
+	}
+	
+	
 }
+
