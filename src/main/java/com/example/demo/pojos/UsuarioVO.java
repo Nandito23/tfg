@@ -40,7 +40,10 @@ public class UsuarioVO {
 	
 	@Column(name="pass")
 	private String pass;
-
+	
+	@Column(name="tipo")
+	private boolean tipo;
+	
 	@OneToMany(mappedBy="usuarioVO")
 	private List<ReservasVO> ListaReserva;
 
@@ -106,6 +109,14 @@ public class UsuarioVO {
 
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+
+	public boolean isTipo() {
+		return tipo;
+	}
+
+	public void setTipo(boolean tipo) {
+		this.tipo = tipo;
 	}
 
 	public List<ReservasVO> getListaReserva() {

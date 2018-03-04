@@ -8,16 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class controllerIndex { //CONTROLADOR DE LA VISTA PRINCIPAL
 
 	//LANZA LA VISTA PRINCIPAL
-	@RequestMapping("/vistaIndex")
+	@RequestMapping("/vistaIndex") //RUTA EN EL HTML
 	public ModelAndView vistaPrincipal() {
 		return new ModelAndView("index");
 	}
 	
-	@RequestMapping("/vistaLogin")
-	public ModelAndView vistaLogueo() {
-		return new ModelAndView("vistaLogin");
-	}
-	
+	//LANZA LA VISTA DE LOGIN
+ //	@RequestMapping("/vistaLogin")
+	//public ModelAndView vistaLogueo() {
+	//	return new ModelAndView("vistaLogin"); //nombre del HTML
+	//}
 	
 }
 

@@ -9,6 +9,7 @@ import com.example.demo.pojos.UsuarioVO;
 @Repository("UsuarioRepo")
 public interface UsuarioRepo extends JpaRepository<UsuarioVO, Integer> {
 	
+	UsuarioVO findByEmailAndPass(String email,String pass);
 	
 
 		

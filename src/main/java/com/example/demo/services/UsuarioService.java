@@ -35,6 +35,9 @@ public class UsuarioService {
 		usuarioRepo.save(usuario);
 	}
 
-
+	//VALIDACIÓN DE EMAIL Y PASS DE LOGIN
+	public 	UsuarioVO ValidarLogin(String email,String pass) {
+		return usuarioRepo.findByEmailAndPass(email, pass);
+	}
 	
 }
