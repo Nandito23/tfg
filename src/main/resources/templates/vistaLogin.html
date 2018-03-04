@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title> Alquiler de cohes | Rent a car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet"/>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Bienvenidos a Rent a car</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li> 
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-black">
+      <div class="container text-center">
+        <h1>Inicia Sesión</h1>
+      </div>
+    </header>
+      
+      <!--Login form  -->
+      
+      <br></br>
+      <br></br>
+      <div class="container">
+    <div class="row">
+		<div class="offset-4 col-md-4 offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Registrese</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form th:action="@{/vistaLogin}"  method="post">
+                     <div th:if="${param.error}">
+                        <div class="alert alert-danger">
+                            Invalid username and password.
+                        </div>
+                    </div>
+			    	  	<div class="form-group">
+			    		    <input class="form-control"  placeholder="E-mail" th:name="email" type="text"/>
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Password" th:name="pass" type="password"/>
+			    		</div>
+			    		
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login"/>
+			    		
+			    		<input class="btn btn-lg btn-info btn-block"  value="Nuevo Usuario"/>
+			    		</form>
+			    	
+			      	
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+     <br></br>
+      <br></br>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+   
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+
+  </body>
+
+</html>
