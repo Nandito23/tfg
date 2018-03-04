@@ -14,10 +14,10 @@ public class controllerIndex { //CONTROLADOR DE LA VISTA PRINCIPAL
 	}
 	
 	//LANZA LA VISTA DE LOGIN
- //	@RequestMapping("/vistaLogin")
-	//public ModelAndView vistaLogueo() {
-	//	return new ModelAndView("vistaLogin"); //nombre del HTML
-	//}
+ 	@RequestMapping("/vistaLogin")
+	public ModelAndView vistaLogueo() {
+		return new ModelAndView("vistaLogin"); //nombre del HTML
+	}
 	
 }
 

@@ -16,7 +16,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 	UsuarioService userService;
 	
 	
-	@RequestMapping("/vistaLogin")
+	@RequestMapping("/Login")
 	public ModelAndView vistaLogueo(@RequestParam("email") String email,  @RequestParam("pass") String pass) {
 		System.err.println("entra");
 		 UsuarioVO us = userService.ValidarLogin(email, pass);
