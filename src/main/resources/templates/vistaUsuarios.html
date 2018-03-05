@@ -41,6 +41,12 @@
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">Mis datos</a>
             </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Contactenos</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Garajes</a>
+            </li>
           </ul>
              <form th:action="@{/logout}" method="post">
             <button type="button" class="btn btn-primary">Logout</button>
@@ -59,14 +65,51 @@
    
             <br></br>
                <br></br>
-               <h1>Admin page (Spring Security protected)</h1>
-
-       
+                <h2 style="text-align: center;">Clientes Rent a Car</h2>
+                <div class="container">
+               <table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>DNI</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Direccion</th>
+      <th>Tlfno</th>
+      <th>E-mail</th>
+      <th>Pass</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="users : ${usuarios}">
+      
+      <td th:text="${users.idUsuario}"></td>
+      <td th:text="${users.dni}"></td>
+      <td th:text="${users.nombre}"></td>
+      <td th:text="${users.apellidos}"></td>
+      <td th:text="${users.direccion}"></td>
+      <td th:text="${users.tlfno}"></td>
+      <td th:text="${users.email}"></td>
+      <td th:text="${users.pass}"></td>
+      <td th:text="${users.tipo}"></td>
+      
+    </tr>
+  </tbody>
+</table>
+       </div> 
 
             
       <br></br>
-      <br></br>
+      <div class="col-md-10 text-center">
+         <button type="submit" class="btn btn-primary btn-lg">Añadir</button> 
+         <button type="button" class="btn btn-warning btn-lg">Editar</button> 
+         <button type="button" class="btn btn-danger btn-lg">Eliminar</button> 
+          </div>
 
+      <br></br>
+     <br></br>
+      
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
@@ -76,11 +119,9 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Custom JavaScript for this theme -->
     <script src="js/scrolling-nav.js"></script>

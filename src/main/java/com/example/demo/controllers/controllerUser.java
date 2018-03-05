@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +16,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 	@Autowired
 	UsuarioService userService;
 	
-	
+	//CONTROL DEL LOGIN
 	@RequestMapping("/Login")
 	public ModelAndView vistaLogueo(@RequestParam("email") String email,  @RequestParam("pass") String pass) {
 		System.err.println("entra");
@@ -31,9 +32,23 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		return new ModelAndView("vistaLogin");
 		
 		}
+	
+	
+	//LANZA EL INDEX DE ADMIN
+	@RequestMapping("/indexAdministrador")
+	public ModelAndView vistaIndexAdmin() {
+		return new ModelAndView("indexAdministrador"); //nombre del HTML
+	}
+	
+	//LANZA LA VISTA DE USUARIOS REGISTRADOS
+	@RequestMapping("/vistaUsuarios")
+	public String ListaUsuarios(Model model) {
 		
-	}	
+	model.addAttribute("usuarios",userService.findAll());
+		
+	return "vistaUsuarios";
+}	
 	
 	
 
-
+}
