@@ -49,6 +49,33 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 	return "vistaUsuarios";
 }	
 	
+	//ADD NEW USER
+	@RequestMapping("/addUser")
+	public ModelAndView addUser(@RequestParam("dni") String dni,  @RequestParam("nombre") String nombre,
+	@RequestParam("apellidos") String apellidos,@RequestParam("direccion") String direccion,
+	@RequestParam("tlfno") int tlfno,@RequestParam("email") String email,@RequestParam("pass") String pass,
+	@RequestParam("tipo") boolean tipo) {
+		
+		 UsuarioVO us =new  UsuarioVO();
+		
+		 us.setDni(dni);
+		 us.setNombre(nombre);
+		 us.setApellidos(apellidos);
+		 us.setDireccion(direccion);
+		 us.setTlfno(tlfno);
+		 us.setEmail(email);
+		 us.setPass(pass);
+		 us.setTipo(tipo);
+		 
+		 userService.save(us);
+		 
+		return new ModelAndView("vistaFormulario");
+		
+		}
 	
-
+	//LANZA EL FORMULARIO DE REGISTRO EN LA VISTA ADMIN
+		@RequestMapping("/vistaFormularioAdmin")
+		public ModelAndView vistaFormularioAdmin() {
+			return new ModelAndView("vistaFormularioAdmin"); //nombre del HTML
+		}
 }
