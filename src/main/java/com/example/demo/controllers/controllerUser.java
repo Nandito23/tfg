@@ -69,7 +69,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		 
 		 userService.save(us);
 		 
-		return new ModelAndView("vistaFormulario");
+		return new ModelAndView("vistaFormularioAdmin");
 		
 		}
 	
