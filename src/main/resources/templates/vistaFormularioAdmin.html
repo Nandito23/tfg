@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title> Alquiler de cohes | Rent a car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet"/>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Bienvenidos a Rent a car</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Reservas</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Mis datos</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Garajes</a>
+            </li>
+          </ul>
+		  <button type="button" class="btn btn-primary">Logout</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-black">
+      <div class="container text-center">
+        <h1>Registrar Nuevo Usuario</h1>
+        
+      </div>
+    </header>
+      
+      <!--FORM GROUP  -->
+      
+      <br></br>
+   <form class="form-horizontal">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">DNI:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="dni"  class="form-control input-md"  type="text"/>
+ </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Nombre:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="nombre"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Apellidos:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="apellidos"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+    
+    
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Direccion:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="direccion"  class="form-control input-md" type="text"/>
+  </div>
+  </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label"  for="textinput">Tlfno:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="tlfno" class="form-control input-md" type="text"/>
+ 
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Email:</label>
+  <div class="offset-4 col-md-4 offset-4">
+    <input th:name="email" placeholder="you@hotmail.com"  class="form-control input-md"/>
+  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="passwordinput">Password:</label>
+  <div class="offset-4 col-md-4 offset-4">
+    <input th:name="pass"  class="form-control input-md" type="password"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="passwordinput">Repita Password:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input  class="form-control input-md" type="password"/>
+  
+  </div>
+</div>
+    
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Admin 1 | Usuario 0:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="tipo"  class="form-control input-md" type="text" maxlength="1"/>
+  
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="singlebutton"></label>
+  <div class="offset-4 col-md-4 offset-4">
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+   
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>
