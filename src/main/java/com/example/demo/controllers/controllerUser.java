@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -79,8 +80,40 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 			return new ModelAndView("vistaFormularioAdmin"); //nombre del HTML
 		}
 		
-		//@GetMapping("/compra/{id}")
-		//public Compra findOne(@PathVariable("id") Long id){
-		//return compraService.findOne(id);
+		//@GetMapping("/UpdateFormularioAdmin/{idUsuario}")
+		//public UsuarioVO findOne(@PathVariable("id") int idUsuario){
+		//return userService.findOne(idUsuario);
 		//}
+		
+		@RequestMapping("/UpdateFormularioAdmin/{idUsuario}")
+		public String editUsuario(@PathVariable("idUsuario") int idUsuario, Model model){
+	        model.addAttribute("users", userService.find(idUsuario));
+	       
+	        return "UpdateFormularioAdmin";
+	    }
+		
+		//UPDATE NEW USER
+		@RequestMapping("/UpdateUser")
+		public ModelAndView UpdateUser(@RequestParam("idUsuario") int idUsuario,@RequestParam("dni") String dni,  @RequestParam("nombre") String nombre,
+		@RequestParam("apellidos") String apellidos,@RequestParam("direccion") String direccion,
+		@RequestParam("tlfno") int tlfno,@RequestParam("email") String email,@RequestParam("pass") String pass,
+		@RequestParam("tipo") boolean tipo) {
+			
+			 UsuarioVO us =new  UsuarioVO();
+			 
+			 us.setIdUsuario(idUsuario);
+			 us.setDni(dni);
+			 us.setNombre(nombre);
+			 us.setApellidos(apellidos);
+			 us.setDireccion(direccion);
+			 us.setTlfno(tlfno);
+			 us.setEmail(email);
+			 us.setPass(pass);
+			 us.setTipo(tipo);
+			 
+			 userService.save(us);
+			 
+			return new ModelAndView("vistaUsuarios");
+			
+			}
 }

@@ -93,7 +93,7 @@
       <td th:text="${users.email}"></td>
       <td th:text="${users.pass}"></td>
       <td th:text="${users.tipo}"></td>
-      <td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioAdmin'+users.idUsuario}">Modificar</a></td>
+      <td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioAdmin' + ${users.idUsuario}}">Modificar</a></td>
       <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteFormularioAdmin'+users.idUsuario}">Eliminar</a></td>
     </tr>
   </tbody>
