@@ -80,11 +80,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 			return new ModelAndView("vistaFormularioAdmin"); //nombre del HTML
 		}
 		
-		//@GetMapping("/UpdateFormularioAdmin/{idUsuario}")
-		//public UsuarioVO findOne(@PathVariable("id") int idUsuario){
-		//return userService.findOne(idUsuario);
-		//}
-		
+		//LLAMA A LA VISTA DE ACTUALIZAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
 		@RequestMapping("/UpdateFormularioAdmin/{idUsuario}")
 		public String editUsuario(@PathVariable("idUsuario") int idUsuario, Model model){
 	        model.addAttribute("users", userService.find(idUsuario));
@@ -94,7 +90,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		
 		//UPDATE NEW USER
 		@RequestMapping("/UpdateUser")
-		public ModelAndView UpdateUser(@RequestParam("idUsuario") int idUsuario,@RequestParam("dni") String dni,  @RequestParam("nombre") String nombre,
+		public String UpdateUser(@RequestParam("idUsuario") int idUsuario,@RequestParam("dni") String dni,  @RequestParam("nombre") String nombre,
 		@RequestParam("apellidos") String apellidos,@RequestParam("direccion") String direccion,
 		@RequestParam("tlfno") int tlfno,@RequestParam("email") String email,@RequestParam("pass") String pass,
 		@RequestParam("tipo") boolean tipo) {
@@ -113,7 +109,16 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 			 
 			 userService.save(us);
 			 
-			return new ModelAndView("vistaUsuarios");
+			return "redirect:/vistaUsuarios";
 			
 			}
+		
+		
+		//LLAMA A LA VISTA DE ELIMINAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
+				@RequestMapping("/DeleteUser/{idUsuario}")
+				public String DeleteUsuario(@PathVariable("idUsuario") int idUsuario) {
+			       userService.delete(idUsuario);
+			       
+			    return "redirect:/vistaUsuarios";
+			    }
 }

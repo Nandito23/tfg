@@ -71,7 +71,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">ID:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.idUsuario}"  class="form-control input-md"  type="text" />
+  <input th:value="${users.idUsuario}" th:name="idUsuario" class="form-control input-md"  type="text" />
  </div>
 </div>
 
@@ -79,7 +79,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">DNI:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.dni}"  class="form-control input-md"  type="text"/>
+  <input th:value="${users.dni}" th:name="dni"  class="form-control input-md"  type="text"/>
  </div>
 </div>
 
@@ -87,7 +87,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Nombre:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.nombre}"  class="form-control input-md" type="text"/>
+  <input th:value="${users.nombre}" th:name="nombre" class="form-control input-md" type="text"/>
   
   </div>
 </div>
@@ -96,7 +96,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Apellidos:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.apellidos}"  class="form-control input-md" type="text"/>
+  <input th:value="${users.apellidos}" th:name="apellidos"  class="form-control input-md" type="text"/>
   
   </div>
 </div>
@@ -105,7 +105,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Direccion:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.direccion}"  class="form-control input-md" type="text"/>
+  <input th:value="${users.direccion}" th:name="direccion" class="form-control input-md" type="text"/>
   </div>
   </div>
 
@@ -113,7 +113,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label"  for="textinput">Tlfno:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.tlfno}" class="form-control input-md" type="text"/>
+  <input th:value="${users.tlfno}" th:name="tlfno" class="form-control input-md" type="text"/>
  
   </div>
 </div>
@@ -122,7 +122,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Email:</label>
   <div class="offset-4 col-md-4 offset-4">
-    <input th:value="${users.email}" placeholder="you@hotmail.com"  class="form-control input-md"/>
+    <input th:value="${users.email}" th:name="email" placeholder="you@hotmail.com"  class="form-control input-md"/>
   
   </div>
 </div>
@@ -131,7 +131,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Password:</label>
   <div class="offset-4 col-md-4 offset-4">
-    <input th:value="${users.pass}"  class="form-control input-md" type="text"/>
+    <input th:value="${users.pass}" th:name="pass" class="form-control input-md" type="text"/>
     
   </div>
 </div>
@@ -148,7 +148,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Admin 1 | Usuario 0:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.tipo}"  class="form-control input-md" type="text" />
+  <input th:value="${users.tipo}" th:name="tipo"  class="form-control input-md" type="text" />
   
   </div>
 </div>
