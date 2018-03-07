@@ -78,4 +78,9 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		public ModelAndView vistaFormularioAdmin() {
 			return new ModelAndView("vistaFormularioAdmin"); //nombre del HTML
 		}
+		
+		//@GetMapping("/compra/{id}")
+		//public Compra findOne(@PathVariable("id") Long id){
+		//return compraService.findOne(id);
+		//}
 }
