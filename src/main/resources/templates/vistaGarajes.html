@@ -65,36 +65,22 @@
    
             <br></br>
                <br></br>
-                <h2 style="text-align: center;">Clientes Rent a Car</h2>
+                <h2 style="text-align: center;">Garajes Rent a Car</h2>
                 <div class="container">
   <table class="table table-hover table-responsive">
   <thead>
     <tr>
       <th>#</th>
-      <th>DNI</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Direccion</th>
-      <th>Tlfno</th>
-      <th>E-mail</th>
-      <th>Pass</th>
-      <th>Admin</th>
+      <th>Ubicacion</th>
     </tr>
   </thead>
   <tbody>
-    <tr th:each="users : ${usuarios}">
+    <tr th:each="garaje : ${garajes}">
       
-      <td th:text="${users.idUsuario}"></td>
-      <td th:text="${users.dni}"></td>
-      <td th:text="${users.nombre}"></td>
-      <td th:text="${users.apellidos}"></td>
-      <td th:text="${users.direccion}"></td>
-      <td th:text="${users.tlfno}"></td>
-      <td th:text="${users.email}"></td>
-      <td th:text="${users.pass}"></td>
-      <td th:text="${users.tipo}"></td>
-      <td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioAdmin/' + ${users.idUsuario}}">Modificar</a></td>
-      <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteUser/' + ${users.idUsuario}}">Eliminar</a></td>
+      <td th:text="${garaje.idGaraje}"></td>
+      <td th:text="${garaje.ubicacion}"></td>
+      <td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioGarajes/' + ${garaje.idGaraje}}">Modificar</a></td>
+       <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteGarajes/' + ${garaje.idGaraje}}">Eliminar</a></td>
     </tr>
   </tbody>
 </table>
@@ -103,7 +89,7 @@
             
       <br></br>
       <div class="col-md-10 text-center">
-         <a class="btn btn-primary btn-lg" th:href="@{/vistaFormularioAdmin}">Añadir</a> 
+         <a class="btn btn-primary btn-lg" th:href="@{/FormularioGarajes}">Añadir</a> 
           </div>
 
       <br></br>

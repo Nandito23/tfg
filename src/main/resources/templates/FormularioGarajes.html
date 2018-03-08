@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    
 
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet"/>
@@ -30,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" th:href="@{/indexAdministrador}">Inicio</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/vista}">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaUsuarios}">Usuarios</a>
@@ -39,76 +40,63 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Reservas</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Mis datos</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">Mis datos</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Contactenos</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
             </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
             </li>
           </ul>
-             <form th:action="@{/logout}" method="post">
-            <button type="button" class="btn btn-primary">Logout</button>
-            </form>
+		  <button type="button" class="btn btn-primary">Logout</button>
         </div>
       </div>
     </nav>
 
     <header class="bg-primary text-black">
       <div class="container text-center">
-        <h1>Sucursales de alquiler de coches en España y en más de 105 países en todo el mundo.</h1>
-        <p class="lead">Alquileres de coches</p>
+        <h1>Registrar Nuevo Garaje</h1>
+        
       </div>
     </header>
-
-   
-            <br></br>
-               <br></br>
-                <h2 style="text-align: center;">Clientes Rent a Car</h2>
-                <div class="container">
-  <table class="table table-hover table-responsive">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>DNI</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Direccion</th>
-      <th>Tlfno</th>
-      <th>E-mail</th>
-      <th>Pass</th>
-      <th>Admin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr th:each="users : ${usuarios}">
       
-      <td th:text="${users.idUsuario}"></td>
-      <td th:text="${users.dni}"></td>
-      <td th:text="${users.nombre}"></td>
-      <td th:text="${users.apellidos}"></td>
-      <td th:text="${users.direccion}"></td>
-      <td th:text="${users.tlfno}"></td>
-      <td th:text="${users.email}"></td>
-      <td th:text="${users.pass}"></td>
-      <td th:text="${users.tipo}"></td>
-      <td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioAdmin/' + ${users.idUsuario}}">Modificar</a></td>
-      <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteUser/' + ${users.idUsuario}}">Eliminar</a></td>
-    </tr>
-  </tbody>
-</table>
-       </div> 
-
-            
-      <br></br>
-      <div class="col-md-10 text-center">
-         <a class="btn btn-primary btn-lg" th:href="@{/vistaFormularioAdmin}">Añadir</a> 
-          </div>
-
-      <br></br>
-     <br></br>
+      <!--FORM GROUP  -->
       
+      <br></br>
+   <form class="form-horizontal" th:action="@{/addGaraje}" method="post">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">#</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input class="form-control input-md"  type="text"/>
+ </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Ubicacion:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="ubicacion"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="singlebutton"></label>
+  <div class="offset-4 col-md-4 offset-4">
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+    <br></br>
+
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
@@ -118,12 +106,13 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
 
     <!-- Custom JavaScript for this theme -->
     <script src="js/scrolling-nav.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   </body>
 

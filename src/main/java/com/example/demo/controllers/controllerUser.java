@@ -114,11 +114,11 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 			}
 		
 		
-		//LLAMA A LA VISTA DE ELIMINAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
+		        //ELIMINAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
 				@RequestMapping("/DeleteUser/{idUsuario}")
 				public String DeleteUsuario(@PathVariable("idUsuario") int idUsuario) {
 			       userService.delete(idUsuario);
 			       
-			    return "redirect:/vistaUsuarios";
+			    return "redirect:/vistaUsuarios"; 
 			    }
 }

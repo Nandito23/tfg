@@ -19,7 +19,7 @@ public class GarajeService {
 		return garajeRepo.findAll();
 	}
 	
-	public GarajeVO findOne(Integer idGaraje) {
+	public GarajeVO find(Integer idGaraje) {
 		return garajeRepo.findOne(idGaraje);
 	}
 	
@@ -31,7 +31,7 @@ public class GarajeService {
 		garajeRepo.delete(idGaraje);
 	}
 	
-	public void update(GarajeVO garaje) {
+	public void update(Integer idGaraje,GarajeVO garaje) {
 		garajeRepo.save(garaje);
 	}
 }

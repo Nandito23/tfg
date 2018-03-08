@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Inicio</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/indexAdministrador}">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaUsuarios}">Usuarios</a>
@@ -46,7 +46,7 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Garajes</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
             </li>
           </ul>
 		  <button type="button" class="btn btn-primary">Logout</button>
