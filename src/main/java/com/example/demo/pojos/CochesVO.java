@@ -1,5 +1,6 @@
 package com.example.demo.pojos;
 
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -42,128 +44,152 @@ private String modelo;
 private String combustible;
 
 @Column(name="num_plazas")
-private int numPlazas;
+private int num_plazas;
 
 @Column(name="num_kms")
-private int numKms;
+private int num_kms;
 
 @Column(name="potencia")
-private int cv;
+private int potencia;
 
 
 @ManyToOne
 @JoinColumn(name="id_garaje")
 private GarajeVO garajeVO;
 
-@ManyToOne
-@JoinColumn(name="id_reserva")
-private ReservasVO reservasVO;
+
+@OneToMany(mappedBy="coches")
+private List<ReservasVO> reservasVO;
+
 
 public int getIdCoches() {
 	return idCoches;
 }
 
+
 public void setIdCoches(int idCoches) {
 	this.idCoches = idCoches;
 }
+
 
 public String getMatricula() {
 	return matricula;
 }
 
+
 public void setMatricula(String matricula) {
 	this.matricula = matricula;
 }
+
 
 public String getColor() {
 	return color;
 }
 
+
 public void setColor(String color) {
 	this.color = color;
 }
+
 
 public float getPrecio() {
 	return precio;
 }
 
+
 public void setPrecio(float precio) {
 	this.precio = precio;
 }
+
 
 public String getEstado() {
 	return estado;
 }
 
+
 public void setEstado(String estado) {
 	this.estado = estado;
 }
+
 
 public String getMarca() {
 	return marca;
 }
 
+
 public void setMarca(String marca) {
 	this.marca = marca;
 }
+
 
 public String getModelo() {
 	return modelo;
 }
 
+
 public void setModelo(String modelo) {
 	this.modelo = modelo;
 }
+
 
 public String getCombustible() {
 	return combustible;
 }
 
+
 public void setCombustible(String combustible) {
 	this.combustible = combustible;
 }
 
-public int getNumPlazas() {
-	return numPlazas;
+
+public int getNum_plazas() {
+	return num_plazas;
 }
 
-public void setNumPlazas(int numPlazas) {
-	this.numPlazas = numPlazas;
+
+public void setNum_plazas(int num_plazas) {
+	this.num_plazas = num_plazas;
 }
 
-public int getNumKms() {
-	return numKms;
+
+public int getNum_kms() {
+	return num_kms;
 }
 
-public void setNumKms(int numKms) {
-	this.numKms = numKms;
+
+public void setNum_kms(int num_kms) {
+	this.num_kms = num_kms;
 }
 
-public int getCv() {
-	return cv;
+
+public int getPotencia() {
+	return potencia;
 }
 
-public void setCv(int cv) {
-	this.cv = cv;
+
+public void setPotencia(int potencia) {
+	this.potencia = potencia;
 }
+
 
 public GarajeVO getGarajeVO() {
 	return garajeVO;
 }
 
+
 public void setGarajeVO(GarajeVO garajeVO) {
 	this.garajeVO = garajeVO;
 }
 
-public ReservasVO getReservasVO() {
+
+public List<ReservasVO> getReservasVO() {
 	return reservasVO;
 }
 
-public void setReservasVO(ReservasVO reservasVO) {
+
+public void setReservasVO(List<ReservasVO> reservasVO) {
 	this.reservasVO = reservasVO;
 }
-
-
 
 
 

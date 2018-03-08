@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Inicio</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/indexAdministrador}">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaUsuarios}">Usuarios</a>
@@ -46,7 +46,7 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Garajes</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
             </li>
           </ul>
 		  <button type="button" class="btn btn-primary">Logout</button>
@@ -56,108 +56,135 @@
 
     <header class="bg-primary text-black">
       <div class="container text-center">
-        <h1>Registrar Nuevo Usuario</h1>
+        <h1>Registrar Nuevo Coche</h1>
         
       </div>
     </header>
       
       <!--FORM GROUP  -->
-      
       <br></br>
-   <form class="form-horizontal" th:action="@{/UpdateUser}" method="post">
-<fieldset>
+   <form class="form-horizontal">
+	<fieldset>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">ID:</label>  
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Matricula:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.idUsuario}" th:name="idUsuario" class="form-control input-md"  type="text" />
- </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">DNI:</label>  
-  <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.dni}" th:name="dni"  class="form-control input-md"  type="text"/>
- </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Nombre:</label>  
-  <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.nombre}" th:name="nombre" class="form-control input-md" type="text"/>
-  
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Apellidos:</label>  
-  <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.apellidos}" th:name="apellidos"  class="form-control input-md" type="text"/>
-  
-  </div>
-</div>
-    
-    
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Direccion:</label>  
-  <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.direccion}" th:name="direccion" class="form-control input-md" type="text"/>
-  </div>
-  </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label"  for="textinput">Tlfno:</label>  
-  <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.tlfno}" th:name="tlfno" class="form-control input-md" type="text"/>
+  <input id="textinput" th:name="matricula"  class="form-control input-md"  type="text"/>
  
   </div>
 </div>
 
-<!-- Password input-->
+<!-- Text input-->
 <div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Email:</label>
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Color:</label>  
   <div class="offset-4 col-md-4 offset-4">
-    <input th:value="${users.email}" th:name="email" placeholder="you@hotmail.com"  class="form-control input-md"/>
+  <input id="textinput" th:name="color"  class="form-control input-md" type="text"/>
   
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Password:</label>
-  <div class="offset-4 col-md-4 offset-4">
-    <input th:value="${users.pass}" th:name="pass" class="form-control input-md" type="text"/>
-    
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Repita Password:</label>  
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Precio:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input  class="form-control input-md" type="text"/>
+  <input id="textinput" th:name="precio"  class="form-control input-md" type="text"/>
   
   </div>
 </div>
     
-<div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Admin 1 | Usuario 0:</label>  
+    
+  <div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" >Estado:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.tipo}" th:name="tipo"  class="form-control input-md" type="text" />
+      <select class="form-control" th:name="estado">
+        <option>Libre</option>
+        <option>Alquilado</option>
+      </select>
+
   
   </div>
 </div>
+    
+    <br></br>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label"  for="textinput">Marca:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input id="textinput" th:name="marca"  class="form-control input-md" type="text"/>
+ 
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Modelo:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input id="textinput" th:name="modelo"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+    
+    <!-- Text input-->
+  <div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" >Combustible:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+      <select class="form-control" th:name="combustible">
+        <option>Gasolina</option>
+        <option>Diesel</option>
+        <option>Hibrido</option>
+      </select>
+
+  
+  </div>
+</div>
+    
+
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">NºPlazas</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input id="textinput" th:name="numPlazas"  class="form-control input-md" type="text" maxlength="1"/>
+  
+  </div>
+</div>
+    
+        <!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">NºKMS:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input id="textinput" th:name="numKms"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+    
+        <!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Potencia:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input id="textinput" th:name="potencia"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+    
+    <div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" >Garaje:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+      <select class="form-control">
+        <option th:each="garaje : ${garajes}" th:value="${garaje.idGaraje}" th:text="${garaje.ubicacion}"></option>
+      </select>
+
+  
+  </div>
+</div>
+    
 
 <!-- Button -->
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="singlebutton"></label>
   <div class="offset-4 col-md-4 offset-4">
-    <button type="submit" class="btn btn-success">Actualizar</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-success">Guardar</button>
   </div>
 </div>
 

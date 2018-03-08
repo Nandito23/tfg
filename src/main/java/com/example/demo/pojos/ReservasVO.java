@@ -1,8 +1,6 @@
 package com.example.demo.pojos;
 
 import java.util.Date;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 @Entity
 @Table(name="reserva")
 public class ReservasVO {
@@ -42,76 +41,94 @@ public class ReservasVO {
 	@JoinColumn(name="id_usuario")
 	private UsuarioVO usuarioVO;
 	
-	
-	@OneToMany(mappedBy="reservasVO")
-	private List<CochesVO> ListaCoches;
-	
-	
+	 
+    @ManyToOne
+    @JoinColumn(name="id_coche")
+    private CochesVO coches;
 
-	
+
 	public int getIdReserva() {
 		return idReserva;
 	}
+
 
 	public void setIdReserva(int idReserva) {
 		this.idReserva = idReserva;
 	}
 
+
 	public String getLugarRecogida() {
 		return lugarRecogida;
 	}
+
 
 	public void setLugarRecogida(String lugarRecogida) {
 		this.lugarRecogida = lugarRecogida;
 	}
 
+
 	public Date getFechaRecogida() {
 		return fechaRecogida;
 	}
+
 
 	public void setFechaRecogida(Date fechaRecogida) {
 		this.fechaRecogida = fechaRecogida;
 	}
 
+
 	public Date getFechaDevolucion() {
 		return fechaDevolucion;
 	}
+
 
 	public void setFechaDevolucion(Date fechaDevolucion) {
 		this.fechaDevolucion = fechaDevolucion;
 	}
 
+
 	public String getLugarDevolucion() {
 		return lugarDevolucion;
 	}
+
 
 	public void setLugarDevolucion(String lugarDevolucion) {
 		this.lugarDevolucion = lugarDevolucion;
 	}
 
+
 	public int getCuotaTotal() {
 		return cuotaTotal;
 	}
+
 
 	public void setCuotaTotal(int cuotaTotal) {
 		this.cuotaTotal = cuotaTotal;
 	}
 
-	public List<CochesVO> getListaCoches() {
-		return ListaCoches;
-	}
-
-	public void setListaCoches(List<CochesVO> listaCoches) {
-		ListaCoches = listaCoches;
-	}
 
 	public UsuarioVO getUsuarioVO() {
 		return usuarioVO;
 	}
 
+
 	public void setUsuarioVO(UsuarioVO usuarioVO) {
 		this.usuarioVO = usuarioVO;
 	}
+
+
+	public CochesVO getCoches() {
+		return coches;
+	}
+
+
+	public void setCoches(CochesVO coches) {
+		this.coches = coches;
+	}
+	
+	
+
+	
 
 	
 	
