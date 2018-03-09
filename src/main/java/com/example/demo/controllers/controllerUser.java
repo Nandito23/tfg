@@ -30,7 +30,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		return new ModelAndView("indexAdministrador");
 		
 		}
-		return new ModelAndView("vistaLogin");
+		return new ModelAndView("indexClientes");
 		
 		}
 	

@@ -81,34 +81,40 @@ public class controllerCoche {
     }
 	
 	
-	//ACTUALIZA LOS GARAJES EN LA VISTA FORMULARIO GARAJES
+	//ACTUALIZA LOS COCHES EN LA VISTA FORMULARIO COCHES
 	@RequestMapping("/UpdateCoche")
 	public String UpdateCoche(@RequestParam("matricula") String matricula,@RequestParam("color") String color,
 			@RequestParam("precio") Float precio,@RequestParam("estado") String estado,
 			@RequestParam("marca") String marca,@RequestParam("modelo") String modelo,
-			@RequestParam("combustible") String combustible,@RequestParam("numPlazas") int numPlazas,
-			@RequestParam("numKms") int numKms,@RequestParam("potencia") int potencia,@RequestParam("idGaraje") int idGaraje) {
+			@RequestParam("numPlazas") int numPlazas,@RequestParam("numKms") int numKms,
+			@RequestParam("potencia") int potencia,@RequestParam("idCoches") int idCoches) {
 		
-		CochesVO car =new  CochesVO();
-		GarajeVO ga = new GarajeVO();
 		
-		 ga.setIdGaraje(idGaraje);
+		 CochesVO car =cochesService.find(idCoches);
+		 
 		 car.setMatricula(matricula);
 		 car.setColor(color);
 		 car.setPrecio(precio);
 		 car.setEstado(estado);
 		 car.setMarca(marca);
 		 car.setModelo(modelo);
-		 car.setCombustible(combustible);
 		 car.setNumPlazas(numPlazas);
 		 car.setNumKms(numKms);
 		 car.setPotencia(potencia);
-		 car.setGarajeVO(ga);
 		 
 		 cochesService.save(car);
 		 
 		return "redirect:/vistaCoches";
 		
 		}
+	
+	
+	//ELIMINAR COCHE /+ ID_COCHE EN EL QUE HAS PINCHADO
+	@RequestMapping("/DeleteCoche/{idCoches}")
+	public String DeleteGaraje(@PathVariable("idCoches") int idCoches) {
+       cochesService.delete(idCoches);
+       
+    return "redirect:/vistaCoches"; 
+    }
 	
 }
