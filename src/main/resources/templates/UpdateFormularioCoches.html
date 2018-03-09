@@ -174,7 +174,7 @@
   <label class="offset-4 col-md-4 offset-4 control-label" >Garaje:</label>  
   <div class="offset-4 col-md-4 offset-4">
       <select class="form-control" th:name="idGaraje">
-        <option th:each="garaje : ${garaje}" th:value="${coche.garajeVO.idGaraje}" th:text="${garaje.idGaraje}"></option>
+        <option th:each="garaje : ${garaje}" th:value="${garaje.idGaraje}" th:text="${garaje.idGaraje}"  th:selected="(${garaje.idGaraje}==*{coche.garajeVO.idGaraje})" ></option>
       </select>
 
   
