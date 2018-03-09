@@ -44,10 +44,10 @@ private String modelo;
 private String combustible;
 
 @Column(name="num_plazas")
-private int num_plazas;
+private int numPlazas;
 
 @Column(name="num_kms")
-private int num_kms;
+private int numKms;
 
 @Column(name="potencia")
 private int potencia;
@@ -142,23 +142,23 @@ public void setCombustible(String combustible) {
 }
 
 
-public int getNum_plazas() {
-	return num_plazas;
+public int getNumPlazas() {
+	return numPlazas;
 }
 
 
-public void setNum_plazas(int num_plazas) {
-	this.num_plazas = num_plazas;
+public void setNumPlazas(int numPlazas) {
+	this.numPlazas = numPlazas;
 }
 
 
-public int getNum_kms() {
-	return num_kms;
+public int getNumKms() {
+	return numKms;
 }
 
 
-public void setNum_kms(int num_kms) {
-	this.num_kms = num_kms;
+public void setNumKms(int numKms) {
+	this.numKms = numKms;
 }
 
 

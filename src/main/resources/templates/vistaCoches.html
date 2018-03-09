@@ -95,12 +95,12 @@
       <td th:text="${coche.marca}"></td>
       <td th:text="${coche.modelo}"></td>
       <td th:text="${coche.combustible}"></td>
-      <td th:text="${coche.num_plazas}"></td>
-      <td th:text="${coche.num_kms}"></td>
+      <td th:text="${coche.numPlazas}"></td>
+      <td th:text="${coche.numKms}"></td>
       <td th:text="${coche.potencia}"></td>
       <td th:text="${coche.garajeVO.idGaraje}"></td>
-      <!--<td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioAdmin/' + ${users.idUsuario}}">Modificar</a></td>
-      <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteUser/' + ${users.idUsuario}}">Eliminar</a></td>-->
+      <td><a class="btn btn-warning btn-lg" th:href="@{'/UpdateFormularioCoches/' + ${coche.idCoches}}">Modificar</a></td>
+     <!-- <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteUser/' + ${users.idUsuario}}">Eliminar</a></td>-->
     </tr>
   </tbody>
 </table>
