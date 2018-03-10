@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title> Alquiler de cohes | Rent a car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet"/>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Bienvenidos a Rent a car</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/indexAdministrador}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaUsuarios}">Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaReservas}">Reservas</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
+            </li>
+          </ul>
+		  <button type="button" class="btn btn-primary">Logout</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-black">
+      <div class="container text-center">
+        <h1>Registrar Nueva Reserva</h1>
+        
+      </div>
+    </header>
+      
+      <!--FORM GROUP  -->
+      
+	  
+	  
+      <br></br>
+   <form class="form-horizontal" th:action="@{/addReserva}" method="post">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Lugar de Recogida:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="lugarRecogida"  class="form-control input-md"  type="text"/>
+ </div>
+</div>
+
+
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Fecha de Recogida:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+   	<input type="text" placeholder="YYYY/MM/DD" th:name="fechaRecogida" maxlength="10" />
+ </div>
+</div>
+
+
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Fecha de Devolucion:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+   	<input type="text" placeholder="YYYY/MM/DD" th:name="fechaDevolucion" maxlength="10" />
+ </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Lugar de Devolucion:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="lugarDevolucion"  class="form-control input-md"  type="text"/>
+ </div>
+</div>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Cuota Total:</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="cuotaTotal"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">#-Usuario</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="idUsuario"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">#-Coche</label>  
+  <div class="offset-4 col-md-4 offset-4">
+  <input th:name="idCoches"  class="form-control input-md" type="text"/>
+  
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="offset-4 col-md-4 offset-4 control-label" for="singlebutton"></label>
+  <div class="offset-4 col-md-4 offset-4">
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+    <br></br>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+   
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>

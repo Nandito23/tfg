@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title> Alquiler de cohes | Rent a car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet"/>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Bienvenidos a Rent a car</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/indexAdministrador}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaUsuarios}">Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaReservas}">Reservas</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaCoches}">Coches</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Contactenos</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
+            </li>
+          </ul>
+             <form th:action="@{/logout}" method="post">
+            <button type="button" class="btn btn-primary">Logout</button>
+            </form>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-black">
+      <div class="container text-center">
+        <h1>Sucursales de alquiler de coches en España y en más de 105 países en todo el mundo.</h1>
+        <p class="lead">Alquileres de coches</p>
+      </div>
+    </header>
+
+   
+            <br></br>
+               <br></br>
+                <h2 style="text-align: center;">Coches Rent a Car</h2>
+                <div class="container">
+  <table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Lugar-Recogida</th>
+      <th>Fecha-Recogida</th>
+      <th>Fecha-Devolucion</th>
+      <th>Lugar-Devolucion</th>
+      <th>Cuota Total</th>
+      <th>#-Usuario</th>
+      <th>#-Coche</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="reserva : ${reservas}">
+    
+      <td th:text="${reserva.idReserva}"></td>
+      <td th:text="${reserva.lugarRecogida}"></td>
+      <td th:text="${reserva.fechaRecogida}"></td>
+      <td th:text="${reserva.fechaDevolucion}"></td>
+      <td th:text="${reserva.lugarDevolucion}"></td> 
+      <td th:text="${reserva.cuotaTotal}"></td>
+      <td th:text="${reserva.UsuarioVO.idUsuario}"></td>
+      <td th:text="${reserva.CochesVO.idCoches}"></td>
+      <td><a class="btn btn-danger btn-lg" th:href="@{'/DeleteReserva/' + ${reserva.idReserva}}">Eliminar</a></td>
+    </tr>
+  </tbody>
+</table>
+       </div> 
+
+            
+      <br></br>
+      <div class="col-md-10 text-center">
+         <a class="btn btn-primary btn-lg" th:href="@{/FormularioReservas}">Añadir</a> 
+          </div>
+
+      <br></br>
+     <br></br>
+      
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+  </body>
+
+</html>
