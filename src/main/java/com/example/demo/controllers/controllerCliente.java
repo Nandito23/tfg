@@ -30,6 +30,12 @@ public class controllerCliente {
 	}
 	
 	
+	//LANZA EL FORMULARIO DE REGISTRO CLIENTES
+		@RequestMapping("/indexClientes")
+		public ModelAndView vistaInicioCli() {
+			return new ModelAndView("indexClientes"); //nombre del HTML
+		}
+	
 	//ADD NEW CLIENTE
 	
 	@RequestMapping("/addCliente")
@@ -60,4 +66,10 @@ public class controllerCliente {
 				
 			return "cochesCli";
 		}	
+			
+			
+			@RequestMapping("/index")
+			public ModelAndView vistaIndex() {
+				return new ModelAndView("index"); //nombre del HTML
+			}
 }
