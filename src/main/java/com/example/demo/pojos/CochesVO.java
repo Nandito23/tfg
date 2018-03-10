@@ -58,7 +58,7 @@ private int potencia;
 private GarajeVO garajeVO;
 
 
-@OneToMany(mappedBy="coches")
+@OneToMany(mappedBy="cochesVO")
 private List<ReservasVO> reservasVO;
 
 

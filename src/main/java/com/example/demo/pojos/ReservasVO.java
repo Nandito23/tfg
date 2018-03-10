@@ -1,6 +1,6 @@
 package com.example.demo.pojos;
 
-import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,10 +25,10 @@ public class ReservasVO {
 	private String lugarRecogida;
 	
 	@Column(name="fecha_recogida")
-	private Date fechaRecogida;
+	private String fechaRecogida;
 	
 	@Column(name="fecha_devolucion")
-	private Date fechaDevolucion;
+	private String fechaDevolucion;
 	
 	@Column(name="lugar_devolucion")
 	private String lugarDevolucion;
@@ -43,7 +43,7 @@ public class ReservasVO {
 	 
     @ManyToOne
     @JoinColumn(name="id_coche")
-    private CochesVO coches;
+    private CochesVO cochesVO;
 
 
 	public int getIdReserva() {
@@ -66,22 +66,22 @@ public class ReservasVO {
 	}
 
 
-	public Date getFechaRecogida() {
+	public String getFechaRecogida() {
 		return fechaRecogida;
 	}
 
 
-	public void setFechaRecogida(Date fechaRecogida) {
+	public void setFechaRecogida(String fechaRecogida) {
 		this.fechaRecogida = fechaRecogida;
 	}
 
 
-	public Date getFechaDevolucion() {
+	public String getFechaDevolucion() {
 		return fechaDevolucion;
 	}
 
 
-	public void setFechaDevolucion(Date fechaDevolucion) {
+	public void setFechaDevolucion(String fechaDevolucion) {
 		this.fechaDevolucion = fechaDevolucion;
 	}
 
@@ -116,15 +116,16 @@ public class ReservasVO {
 	}
 
 
-	public CochesVO getCoches() {
-		return coches;
+	public CochesVO getCochesVO() {
+		return cochesVO;
 	}
 
 
-	public void setCoches(CochesVO coches) {
-		this.coches = coches;
+	public void setCochesVO(CochesVO cochesVO) {
+		this.cochesVO = cochesVO;
 	}
-	
+
+
 	
 
 	
