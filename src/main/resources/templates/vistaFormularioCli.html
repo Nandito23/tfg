@@ -59,7 +59,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">DNI:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:name="dni"  class="form-control input-md" type="text" maxlength="9" type="text" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" required="required" />
+  <input th:name="dni"  class="form-control input-md" type="text" maxlength="9" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" required="required" />
  
   </div>
 </div>
@@ -101,9 +101,9 @@
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Password:</label>
+  <label class="offset-4 col-md-4 offset-4 control-label" for="passwordinput">Password:</label>
   <div class="offset-4 col-md-4 offset-4">
-    <input th:name="pass"  class="form-control input-md" type="text" required="required" />
+    <input th:name="pass"  class="form-control input-md" type="password" required="required" />
   
   </div>
 </div>
