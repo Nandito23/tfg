@@ -12,17 +12,28 @@ import com.example.demo.pojos.GarajeVO;
 import com.example.demo.services.CochesService;
 import com.example.demo.services.GarajeService;
 
+/**
+ * The Class controllerCoche.
+ */
 @Controller
 public class controllerCoche {
 
 	
+	/** The coches service. */
 	@Autowired
 	CochesService cochesService;
 	
+	/** The garaje service. */
 	@Autowired
 	GarajeService garajeService;
 	
 	
+	/**
+	 * Lista coches.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
 	//LANZA LA VISTA DE COCHES
 	@RequestMapping("/vistaCoches")
 	public String ListaCoches(Model model) {
@@ -31,6 +42,11 @@ public class controllerCoche {
 }	
 	
 	
+	/**
+	 * Vista formulario coches.
+	 *
+	 * @return the model and view
+	 */
 	//COMBO GARAJES FORMULARIO COCHES
 	@RequestMapping("/FormularioCoches")
 	public ModelAndView vistaFormularioCoches() {
@@ -42,6 +58,22 @@ public class controllerCoche {
 	}
 	
 	
+	/**
+	 * Adds the coche.
+	 *
+	 * @param matricula the matricula
+	 * @param color the color
+	 * @param precio the precio
+	 * @param estado the estado
+	 * @param marca the marca
+	 * @param modelo the modelo
+	 * @param combustible the combustible
+	 * @param numPlazas the num plazas
+	 * @param numKms the num kms
+	 * @param potencia the potencia
+	 * @param idGaraje the id garaje
+	 * @return the model and view
+	 */
 	//ADD NEW COCHE
 	@RequestMapping("/addCoche")
 	public ModelAndView addCoche(@RequestParam("matricula") String matricula,@RequestParam("color") String color,
@@ -72,6 +104,13 @@ public class controllerCoche {
 		}
 	
 	
+	/**
+	 * Edits the coche.
+	 *
+	 * @param idCoches the id coches
+	 * @param model the model
+	 * @return the string
+	 */
 	//LLAMA A LA VISTA DE ACTUALIZAR COCHE /+ ID_COCHE EN EL QUE HAS PINCHADO
 	@RequestMapping("/UpdateFormularioCoches/{idCoches}")
 	public String editCoche(@PathVariable("idCoches") int idCoches, Model model){
@@ -81,6 +120,21 @@ public class controllerCoche {
     }
 	
 	
+	/**
+	 * Update coche.
+	 *
+	 * @param matricula the matricula
+	 * @param color the color
+	 * @param precio the precio
+	 * @param estado the estado
+	 * @param marca the marca
+	 * @param modelo the modelo
+	 * @param numPlazas the num plazas
+	 * @param numKms the num kms
+	 * @param potencia the potencia
+	 * @param idCoches the id coches
+	 * @return the string
+	 */
 	//ACTUALIZA LOS COCHES EN LA VISTA FORMULARIO COCHES
 	@RequestMapping("/UpdateCoche")
 	public String UpdateCoche(@RequestParam("matricula") String matricula,@RequestParam("color") String color,
@@ -109,6 +163,12 @@ public class controllerCoche {
 		}
 	
 	
+	/**
+	 * Delete garaje.
+	 *
+	 * @param idCoches the id coches
+	 * @return the string
+	 */
 	//ELIMINAR COCHE /+ ID_COCHE EN EL QUE HAS PINCHADO
 	@RequestMapping("/DeleteCoche/{idCoches}")
 	public String DeleteGaraje(@PathVariable("idCoches") int idCoches) {

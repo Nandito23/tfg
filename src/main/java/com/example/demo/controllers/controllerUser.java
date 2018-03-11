@@ -11,12 +11,23 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.pojos.UsuarioVO;
 import com.example.demo.services.UsuarioService;
 
+/**
+ * The Class controllerUser.
+ */
 @Controller
 public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 	
-	@Autowired
+	/** The user service. */
+ @Autowired
 	UsuarioService userService;
 	
+	/**
+	 * Vista logueo.
+	 *
+	 * @param email the email
+	 * @param pass the pass
+	 * @return the model and view
+	 */
 	//CONTROL DEL LOGIN
 	@RequestMapping("/Login")
 	public ModelAndView vistaLogueo(@RequestParam("email") String email,  @RequestParam("pass") String pass) {
@@ -35,12 +46,23 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		}
 	
 	
+	/**
+	 * Vista index admin.
+	 *
+	 * @return the model and view
+	 */
 	//LANZA EL INDEX DE ADMIN
 	@RequestMapping("/indexAdministrador")
 	public ModelAndView vistaIndexAdmin() {
 		return new ModelAndView("indexAdministrador"); //nombre del HTML
 	}
 	
+	/**
+	 * Lista usuarios.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
 	//LANZA LA VISTA DE USUARIOS REGISTRADOS
 	@RequestMapping("/vistaUsuarios")
 	public String ListaUsuarios(Model model) {
@@ -50,6 +72,19 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 	return "vistaUsuarios";
 }	
 	
+	/**
+	 * Adds the user.
+	 *
+	 * @param dni the dni
+	 * @param nombre the nombre
+	 * @param apellidos the apellidos
+	 * @param direccion the direccion
+	 * @param tlfno the tlfno
+	 * @param email the email
+	 * @param pass the pass
+	 * @param tipo the tipo
+	 * @return the model and view
+	 */
 	//ADD NEW USER
 	@RequestMapping("/addUser")
 	public ModelAndView addUser(@RequestParam("dni") String dni,  @RequestParam("nombre") String nombre,
@@ -74,12 +109,24 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		
 		}
 	
+	/**
+	 * Vista formulario admin.
+	 *
+	 * @return the model and view
+	 */
 	//LANZA EL FORMULARIO DE REGISTRO EN LA VISTA ADMIN
 		@RequestMapping("/vistaFormularioAdmin")
 		public ModelAndView vistaFormularioAdmin() {
 			return new ModelAndView("vistaFormularioAdmin"); //nombre del HTML
 		}
 		
+		/**
+		 * Edits the usuario.
+		 *
+		 * @param idUsuario the id usuario
+		 * @param model the model
+		 * @return the string
+		 */
 		//LLAMA A LA VISTA DE ACTUALIZAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
 		@RequestMapping("/UpdateFormularioAdmin/{idUsuario}")
 		public String editUsuario(@PathVariable("idUsuario") int idUsuario, Model model){
@@ -88,6 +135,20 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 	        return "UpdateFormularioAdmin";
 	    }
 		
+		/**
+		 * Update user.
+		 *
+		 * @param idUsuario the id usuario
+		 * @param dni the dni
+		 * @param nombre the nombre
+		 * @param apellidos the apellidos
+		 * @param direccion the direccion
+		 * @param tlfno the tlfno
+		 * @param email the email
+		 * @param pass the pass
+		 * @param tipo the tipo
+		 * @return the string
+		 */
 		//UPDATE NEW USER
 		@RequestMapping("/UpdateUser")
 		public String UpdateUser(@RequestParam("idUsuario") int idUsuario,@RequestParam("dni") String dni,  @RequestParam("nombre") String nombre,
@@ -114,7 +175,13 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 			}
 		
 		
-		        //ELIMINAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
+		        /**
+        		 * Delete usuario.
+        		 *
+        		 * @param idUsuario the id usuario
+        		 * @return the string
+        		 */
+        		//ELIMINAR USUARIO /+ ID_USUARIO EN EL QUE HAS PINCHADO
 				@RequestMapping("/DeleteUser/{idUsuario}")
 				public String DeleteUsuario(@PathVariable("idUsuario") int idUsuario) {
 			       userService.delete(idUsuario);

@@ -13,12 +13,22 @@ import com.example.demo.pojos.ReservasVO;
 import com.example.demo.pojos.UsuarioVO;
 import com.example.demo.services.ReservasService;
 
+/**
+ * The Class controllerReserva.
+ */
 @Controller
 public class controllerReserva {
 
+	/** The reservas service. */
 	@Autowired
 	ReservasService reservasService;
 
+	/**
+	 * Lista reservas.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
 	//LANZA LA VISTA DE RESERVAS REGISTRADOS
 	@RequestMapping("/vistaReservas")
 	public String ListaReservas(Model model) {
@@ -27,12 +37,29 @@ public class controllerReserva {
 	return "vistaReservas";
 }	
 	
+	/**
+	 * Vista formulario reserva.
+	 *
+	 * @return the model and view
+	 */
 	//LANZA EL FORMULARIO DE REGISTRO DE RESERVAS
 	@RequestMapping("/FormularioReservas")
 	public ModelAndView vistaFormularioReserva() {
 		return new ModelAndView("FormularioReservas"); //nombre del HTML
 	}
 	
+	/**
+	 * Adds the reserva.
+	 *
+	 * @param lugarRecogida the lugar recogida
+	 * @param fechaRecogida the fecha recogida
+	 * @param fechaDevolucion the fecha devolucion
+	 * @param lugarDevolucion the lugar devolucion
+	 * @param cuotaTotal the cuota total
+	 * @param idUsuario the id usuario
+	 * @param idCoches the id coches
+	 * @return the model and view
+	 */
 	//ADD NEW RESERVA
 	@RequestMapping("/addReserva")
 	public ModelAndView addReserva(@RequestParam("lugarRecogida") String lugarRecogida,@RequestParam("fechaRecogida") String fechaRecogida,
@@ -60,6 +87,12 @@ public class controllerReserva {
 		
 	}
 	
+	/**
+	 * Delete reserva.
+	 *
+	 * @param idReserva the id reserva
+	 * @return the string
+	 */
 	//ELIMINAR RESERVA /+ ID_RESERVA EN EL QUE HAS PINCHADO
 	@RequestMapping("/DeleteReserva/{idReserva}")
 	public String DeleteReserva(@PathVariable("idReserva") int idReserva) {

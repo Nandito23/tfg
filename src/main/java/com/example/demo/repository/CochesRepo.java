@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.pojos.CochesVO;
 
+/**
+ * The Interface CochesRepo.
+ */
 @Repository("CochesRepo")
 public interface CochesRepo extends JpaRepository<CochesVO, Integer> {
 

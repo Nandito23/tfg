@@ -10,14 +10,25 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.pojos.GarajeVO;
 import com.example.demo.services.GarajeService;
 
+
+/**
+ * The Class controllerGaraje.
+ */
 @Controller
 public class controllerGaraje {
 
+	/** The garaje service. */
 	@Autowired
 	GarajeService garajeService;
 	
 		
 		
+		/**
+		 * Lista garajes.
+		 *
+		 * @param model the model
+		 * @return the string
+		 */
 		//LANZA LA VISTA DE Garajes REGISTRADOS
 		@RequestMapping("/vistaGarajes")
 		public String ListaGarajes(Model model) {
@@ -26,12 +37,23 @@ public class controllerGaraje {
 		return "vistaGarajes";
 	}	
 		
+		/**
+		 * Vista formulario admin.
+		 *
+		 * @return the model and view
+		 */
 		//LANZA EL FORMULARIO DE REGISTRO DE GARAJES
 				@RequestMapping("/FormularioGarajes")
 				public ModelAndView vistaFormularioAdmin() {
 					return new ModelAndView("FormularioGarajes"); //nombre del HTML
 				}
 		
+				/**
+				 * Adds the garaje.
+				 *
+				 * @param ubicacion the ubicacion
+				 * @return the model and view
+				 */
 				//ADD NEW Garaje
 				@RequestMapping("/addGaraje")
 				public ModelAndView addGaraje(@RequestParam("ubicacion") String ubicacion) {
@@ -47,6 +69,13 @@ public class controllerGaraje {
 					}
 				
 				
+				/**
+				 * Edits the garaje.
+				 *
+				 * @param idGaraje the id garaje
+				 * @param model the model
+				 * @return the string
+				 */
 				//LLAMA A LA VISTA DE ACTUALIZAR GARAJE /+ ID_GARAJE EN EL QUE HAS PINCHADO
 				@RequestMapping("/UpdateFormularioGarajes/{idGaraje}")
 				public String editGaraje(@PathVariable("idGaraje") int idGaraje, Model model){
@@ -55,6 +84,13 @@ public class controllerGaraje {
 			        return "UpdateFormularioGarajes";
 			    }
 				
+				/**
+				 * Update user.
+				 *
+				 * @param ubicacion the ubicacion
+				 * @param idGaraje the id garaje
+				 * @return the string
+				 */
 				//ACTUALIZA LOS GARAJES EN LA VISTA FORMULARIO GARAJES
 				@RequestMapping("/UpdateGaraje")
 				public String UpdateUser(@RequestParam("ubicacion") String ubicacion,@RequestParam("idGaraje") int idGaraje) {
@@ -70,6 +106,12 @@ public class controllerGaraje {
 					
 					}
 				
+				/**
+				 * Delete garaje.
+				 *
+				 * @param idGaraje the id garaje
+				 * @return the string
+				 */
 				//ELIMINAR GARAJE /+ ID_GARAJE EN EL QUE HAS PINCHADO
 				@RequestMapping("/DeleteGarajes/{idGaraje}")
 				public String DeleteGaraje(@PathVariable("idGaraje") int idGaraje) {
