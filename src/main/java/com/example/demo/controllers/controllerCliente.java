@@ -72,4 +72,10 @@ public class controllerCliente {
 			public ModelAndView vistaIndex() {
 				return new ModelAndView("index"); //nombre del HTML
 			}
+			
+			
+			@RequestMapping("/vistaContactoCli")
+			public ModelAndView vistaContactoCli() {
+				return new ModelAndView("vistaContactoCli"); //nombre del HTML
+			}
 }

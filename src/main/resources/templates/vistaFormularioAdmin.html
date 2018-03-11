@@ -71,7 +71,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">DNI:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:name="dni"  class="form-control input-md" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" type="text" required="required" />
+  <input th:name="dni"  class="form-control input-md" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" type="text" maxlength="9" required="required" />
  </div>
 </div>
 
@@ -132,8 +132,8 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Admin 1 | Usuario 0:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:name="tipo"  class="form-control input-md" type="text" required="required" />
-  
+  <input type="number" th:name="tipo" min="0" max="1" value="0" onkeypress="return false;" /> 
+
   </div>
 </div>
 
