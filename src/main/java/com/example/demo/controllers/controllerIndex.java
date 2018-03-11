@@ -19,5 +19,11 @@ public class controllerIndex { //CONTROLADOR DE LA VISTA PRINCIPAL
 		return new ModelAndView("vistaLogin"); //nombre del HTML
 	}
 	
+ 	//LANZA LA VISTA DE CONTACTO
+ 	 	@RequestMapping("/vistaContacto")
+ 		public ModelAndView vistaContacto() {
+ 			return new ModelAndView("vistaContacto"); //nombre del HTML
+ 		}
+ 		
 }
 

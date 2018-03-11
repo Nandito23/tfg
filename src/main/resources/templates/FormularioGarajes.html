@@ -42,8 +42,8 @@
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaCoches}">Coches</a>
             </li>
-              <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
+               <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaContacto}">Contacto</a>
             </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
@@ -69,17 +69,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">#</label>  
-  <div class="offset-4 col-md-4 offset-4">
-  <input class="form-control input-md"  type="text"/>
- </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Ubicacion:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:name="ubicacion"  class="form-control input-md" type="text"/>
+  <input th:name="ubicacion"  class="form-control input-md" type="text" required="required" />
   
   </div>
 </div>

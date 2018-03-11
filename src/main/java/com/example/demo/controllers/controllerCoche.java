@@ -67,7 +67,7 @@ public class controllerCoche {
 		 
 		 cochesService.save(car);
 		 
-		return new ModelAndView("FormularioGarajes");
+		return new ModelAndView("FormularioCoches");
 		
 		}
 	

@@ -31,22 +31,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Inicio</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/indexAdministrador}">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaUsuarios}">Usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Reservas</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaReservas}">Reservas</a>
             </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" th:href="@{/vistaCoches}">Coches</a>
             </li>
-              <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contactenos</a>
+               <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaContacto}">Contacto</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Garajes</a>
+              <a class="nav-link js-scroll-trigger" th:href="@{/vistaGarajes}">Garajes</a>
             </li>
           </ul>
 		   <a class="btn btn-primary btn-lg" th:href="@{/vistaLogin}">Logout</a>
@@ -79,7 +79,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">DNI:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.dni}" th:name="dni"  class="form-control input-md"  type="text"/>
+  <input th:value="${users.dni}" th:name="dni"  class="form-control input-md" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" type="text" required="required" />
  </div>
 </div>
 
@@ -87,7 +87,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Nombre:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.nombre}" th:name="nombre" class="form-control input-md" type="text"/>
+  <input th:value="${users.nombre}" th:name="nombre" class="form-control input-md" type="text" required="required" />
   
   </div>
 </div>
@@ -96,7 +96,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Apellidos:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.apellidos}" th:name="apellidos"  class="form-control input-md" type="text"/>
+  <input th:value="${users.apellidos}" th:name="apellidos"  class="form-control input-md" type="text" required="required" />
   
   </div>
 </div>
@@ -105,7 +105,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Direccion:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.direccion}" th:name="direccion" class="form-control input-md" type="text"/>
+  <input th:value="${users.direccion}" th:name="direccion" class="form-control input-md" type="text" required="required" />
   </div>
   </div>
 
@@ -113,7 +113,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label"  for="textinput">Tlfno:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.tlfno}" th:name="tlfno" class="form-control input-md" type="text"/>
+  <input th:value="${users.tlfno}" th:name="tlfno" maxlength="9" onkeypress="return justNumbers(event);" class="form-control input-md" type="text" required="required" />
  
   </div>
 </div>
@@ -122,7 +122,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Email:</label>
   <div class="offset-4 col-md-4 offset-4">
-    <input th:value="${users.email}" th:name="email" placeholder="you@hotmail.com"  class="form-control input-md"/>
+    <input th:value="${users.email}" th:name="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" placeholder="you@hotmail.com"  class="form-control input-md" required="required" />
   
   </div>
 </div>
@@ -131,7 +131,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="passwordinput">Password:</label>
   <div class="offset-4 col-md-4 offset-4">
-    <input th:value="${users.pass}" th:name="pass" class="form-control input-md" type="password"/>
+    <input th:value="${users.pass}" th:name="pass" class="form-control input-md" type="password" required="required" />
     
   </div>
 </div>
@@ -140,7 +140,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Admin 1 | Usuario 0:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.tipo}" th:name="tipo"  class="form-control input-md" type="text" />
+  <input th:value="${users.tipo}" th:name="tipo"  class="form-control input-md" type="text" required="required" />
   
   </div>
 </div>
@@ -174,6 +174,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+
+	<script>
+	function justNumbers(e)
+	{
+	var keynum = window.event ? window.event.keyCode : e.which;
+	if ((keynum == 8) || (keynum == 46))
+	return true;
+	
+	return /\d/.test(String.fromCharCode(keynum));
+	}
+	</script>
   </body>
 
 </html>
