@@ -156,7 +156,7 @@ public class controllerUser { //CONTROLADOR DE LOS USUARIOS
 		@RequestParam("tlfno") int tlfno,@RequestParam("email") String email,@RequestParam("pass") String pass,
 		@RequestParam("tipo") boolean tipo) {
 			
-			 UsuarioVO us =new  UsuarioVO();
+			 UsuarioVO us = new  UsuarioVO();
 			 
 			 us.setIdUsuario(idUsuario);
 			 us.setDni(dni);

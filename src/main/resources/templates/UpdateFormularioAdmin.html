@@ -71,7 +71,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">ID:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input th:value="${users.idUsuario}" th:name="idUsuario" class="form-control input-md"  type="text" disabled="disabled" />
+  <input th:value="${users.idUsuario}" th:name="idUsuario" class="form-control input-md"  type="text"  readonly="readonly" />
  </div>
 </div>
 
@@ -140,8 +140,7 @@
 <div class="form-group">
   <label class="offset-4 col-md-4 offset-4 control-label" for="textinput">Admin 1 | Usuario 0:</label>  
   <div class="offset-4 col-md-4 offset-4">
-  <input type="number" th:name="tipo" min="0" max="1" value="0" onkeypress="return false;" /> 
-
+<input type="number" th:name="tipo" min="0" max="1" value="1" onkeypress="return false;" />
   
   </div>
 </div>

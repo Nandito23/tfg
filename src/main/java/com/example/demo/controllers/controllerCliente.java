@@ -121,4 +121,19 @@ public class controllerCliente {
 			public ModelAndView vistaContactoCli() {
 				return new ModelAndView("vistaContactoCli"); //nombre del HTML
 			}
+			
+			
+			/**
+			 * Vista contacto index.
+			 *
+			 * @return the model and view
+			 */
+			@RequestMapping("/vistaContactoIndex")
+			public ModelAndView vistaContactoIndex() {
+				return new ModelAndView("vistaContactoIndex"); //nombre del HTML
+			}
 }
+
+
+
+
